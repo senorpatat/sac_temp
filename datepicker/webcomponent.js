@@ -1,7 +1,7 @@
 (function () {
     let version = "2.5.2";
     let tmpl = document.createElement('template');
-    tmpl.innerHTML = `<link rel="stylesheet" type="text/css" href="https://github.com/senorpatat/sac_temp/tree/d1829bd1a8c5f7f577db7df09393aeb620fbc800/datepicker/light.css"/>`;
+    tmpl.innerHTML = `<link rel="stylesheet" type="text/css" href="https://senorpatat.github.io/sac_temp/datepicker/light.css"/>`;
 
     class DatePicker extends HTMLElement {
         constructor() {
@@ -71,7 +71,7 @@
         }
 
         set darktheme(value) {
-            this.querySelector("link").setAttribute("href", `https://github.com/senorpatat/sac_temp/tree/d1829bd1a8c5f7f577db7df09393aeb620fbc800/datepicker/${value ? "dark" : "light"}.css`);
+            this.querySelector("link").setAttribute("href", `https://senorpatat.github.io/sac_temp/datepicker/${value ? "dark" : "light"}.css`);
         }
 
         set enablerange(value) {

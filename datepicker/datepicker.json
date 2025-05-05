@@ -12,14 +12,14 @@
 		{
 			"kind": "main",
 			"tag": "nkappler-date-picker",
-			"url": "https://github.com/senorpatat/sac_temp/tree/d1829bd1a8c5f7f577db7df09393aeb620fbc800/datepicker/webcomponent.js",
+			"url": "https://senorpatat.github.io/sac_temp/datepicker/webcomponent.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		},
 		{
 			"kind": "styling",
 			"tag": "nkappler-datepicker-aps",
-			"url": "https://github.com/senorpatat/sac_temp/tree/d1829bd1a8c5f7f577db7df09393aeb620fbc800/datepicker/aps_webcomponent.js",
+			"url": "https://senorpatat.github.io/sac_temp/datepicker/aps_webcomponent.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		}
