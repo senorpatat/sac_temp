@@ -1,0 +1,158 @@
+{
+	"name": "Datepicker",
+	"description": "The Datepicker Custom Widget provides a sophisticated input field for date values and date ranges. The date formatting is customizable and a dark mode is provided.",
+	"newInstancePrefix": "Datepicker",
+	"eula": "",
+	"vendor": "Nikolaj Kappler",
+	"license": "",
+	"id": "nkappler.datepicker",
+	"version": "2.5.2",
+	"icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA4klEQVR4nO2awQqDMBBE5/M8+f/nNH7HiKAimqBNle6u82APNbLxMUnqQeA6HYAPAM6V5mt38XT/lbSZZDuZl/4rS/Pab+v9/Yn0AIZCvPvaT3R3LZzdN8zPfOCKhCURAsglkbMorS0t1sZfI5KMHb9sFel2kz3xh5i+6N8sYg1KxFsidFYHwol4gRIxBl+fCK1s5l8TCSdiYWxCIlQi0NIi6ujUoo5faI/wyT1iYWxCIoyWCKO8NDKKSJilVUIiUCLQ0mK0U4veRaxBiRiD4RPJf9zQrZVLIr0zmVz7hEPAACM+lmuVp/4UlgAAAABJRU5ErkJggg==",
+	"webcomponents": [
+		{
+			"kind": "main",
+			"tag": "nkappler-date-picker",
+			"url": "https://github.com/senorpatat/sac_temp/tree/d1829bd1a8c5f7f577db7df09393aeb620fbc800/datepicker/webcomponent.js",
+			"integrity": "",
+			"ignoreIntegrity": true
+		},
+		{
+			"kind": "styling",
+			"tag": "nkappler-datepicker-aps",
+			"url": "https://github.com/senorpatat/sac_temp/tree/d1829bd1a8c5f7f577db7df09393aeb620fbc800/datepicker/aps_webcomponent.js",
+			"integrity": "",
+			"ignoreIntegrity": true
+		}
+	],
+	"properties": {
+		"dateVal": {
+			"type": "Date",
+			"description": "default (start) date"
+		},
+		"secondDateVal": {
+			"type": "Date",
+			"description": "default end date"
+		},
+		"format": {
+			"type": "string",
+			"description": "date format",
+			"default": ""
+		},
+		"width": {
+			"type": "integer",
+			"default": 192
+		},
+		"height": {
+			"type": "integer",
+			"default": 32
+		},
+		"darktheme": {
+			"type": "boolean",
+			"default": false
+		},
+		"enablerange": {
+			"type": "boolean",
+			"default": false
+		},
+		"minDateVal": {
+			"type": "Date",
+			"description": "The minimum Date value that can be selected. (optional)"
+		},
+		"maxDateVal": {
+			"type": "Date",
+			"description": "The maximum Date value that can be selected. (optional)"
+		}
+	},
+	"methods": {
+		"clear": {
+			"description": "unset the selected date value"
+		},
+		"getDateVal": {
+			"returnType": "Date",
+			"description": "get the date. (start date if range selection is enabled, returns undefined when no date is selecteds)",
+			"parameters": []
+		},
+		"setDateVal": {
+			"description": "set the date. (start date if range selection is enabled)",
+			"parameters": [
+				{
+					"name": "dv",
+					"type": "Date",
+					"description": "The new date"
+				}
+			],
+			"body": "this.dateVal = dv;"
+		},
+		"getSecondDateVal": {
+			"returnType": "Date",
+			"description": "get the end date. (returns undefined if range selection is not enabled)",
+			"parameters": [],
+			"body": " var x = new Date(); x = undefined; if (this.enablerange) { return this.secondDateVal; } else { return x; }"
+		},
+		"setSecondDateVal": {
+			"description": "set the end date. (has no effect if range selection is not enabled)",
+			"parameters": [
+				{
+					"name": "dv",
+					"type": "Date",
+					"description": "The new date"
+				}
+			],
+			"body": "this.secondDateVal = dv;"
+		},
+		"isRangeEnabled": {
+			"description": "Returns whether range selection is enabled",
+			"parameters": [],
+			"body": "return this.enablerange;",
+			"returnType": "boolean"
+		},
+		"getMinimumDateVal": {
+			"returnType": "Date",
+			"description": "get the date minimum. (might return undefined if value is not set)",
+			"parameters": [],
+			"body": "return this.minDateVal || undefined;"
+		},
+		"setMinimumDateVal": {
+			"description": "set the date minimum.",
+			"parameters": [
+				{
+					"name": "dv",
+					"type": "Date",
+					"description": "The new minimum date"
+				}
+			],
+			"body": "this.minDateVal = dv;"
+		},
+		"clearMinimumDateVal": {
+			"description": "clear the date minimum.",
+			"body": "this.minDateVal = undefined;"
+		},
+		"getMaximumDateVal": {
+			"returnType": "Date",
+			"description": "get the date maximum. (might return undefined if value is not set)",
+			"parameters": [],
+			"body": "return this.maxDateVal || undefined;"
+		},
+		"setMaximumDateVal": {
+			"description": "set the date maximum.",
+			"parameters": [
+				{
+					"name": "dv",
+					"type": "Date",
+					"description": "The new minimum date"
+				}
+			],
+			"body": "this.maxDateVal = dv;"
+		},
+		"clearMaximumDateVal": {
+			"description": "clear the date maximum.",
+			"body": "this.maxDateVal = undefined;"
+		}
+	},
+	"events": {
+		"onChange": {
+			"description": "Called when the user changes the selected date."
+		}
+	},
+	"supportsBookmark": true
+}
